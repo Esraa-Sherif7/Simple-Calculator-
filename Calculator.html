@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <section class="container calc-body">
+        <table style="width: 100%">
+            <tr>
+
+                <td><input type='text' id='result' class ='calc-screen' style="text-align: right;"></td>
+    
+                <td colspan="3">
+    
+                    <input type='button' value = 'C' onclick="clearScreen()" class="clear"/>
+    
+                </td>
+    
+            </tr>
+        </table>
+    <div class="calc-button-row">
+
+    <input type="button" value="7"  onClick="display('7')"></input>
+
+    <input type="button" value="8"  onClick="display('8')"></input>
+
+    <input type="button" value="9"  onClick="display('9')"></input>
+
+    <input type="button" value="/"  onClick="display('/')"></input>
+
+    <input type="button" value="4"  onClick="display('4')"></input>
+
+    <input type="button" value="5"  onClick="display('5')"></input>
+
+    <input type="button" value="6"  onClick="display('6')"></input>
+
+    <input type="button" value="*" class="opt" onClick="display('*')"></input>
+
+    <input type="button" value="1"  onClick="display('1')"></input>
+
+    <input type="button" value="2"  onClick="display('2')"></input>
+
+    <input type="button" value="3"  onClick="display('3')"></input>
+
+    <input type="button" value="-" class="opt" onClick="display('-')"></input>
+
+    <input type="button" value="0"  onClick="display('0')"></input>
+
+    <input type="button" value="."  onClick="display('.')"></input>
+
+    <input type="button" value= "=" class="opt equal-sign" onClick="solve()"></input>
+
+    <input type="button" value="+" class="opt" onClick="display('+')"></input>
+    </div>
+
+    </section>
+    <script>
+        function display(val){
+
+        document.getElementById('result').value += val
+
+        return val
+
+        }
+        function solve(){
+
+        let x = document.getElementById('result').value
+
+        let y = eval(x);
+
+        document.getElementById('result').value = y
+
+        return y
+
+        }
+        function clearScreen(){
+
+        document.getElementById('result').value = ''
+
+        }
+    </script>
+</body>
+</html>
